@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>::PPH SEARCH::</title>
+<link rel="shortcut icon" type="image/png" href="logo.jpg"  />
+ <link rel="stylesheet" href="scripts/header.css"  />
+  <script type="text/javascript" src="jquery-1.12.0.js" > </script>
+  <script type="text/javascript" src="jquery-ui.min.js" > </script>
+<script type="text/javascript" src="scripts/book details.js"> </script>
+<script>
+$(document).scroll(function(){
+
+    $("#header_fix").css({"background-color": "#8fd2ff","background":"-webkit-linear-gradient(#09F,#8fd2ff)"});
+	$(" .pph2 , .pph3").css({"font-size":"50px","margin-left":"-10px","color":"#FFF"})
+     $(".pph1").css({"font-size":"50px","color":"#FFF"})
+	}) 
+	var books_img=[];
+	var search_cat=[];
+ var search_title=[];
+ var search_year=[];
+ var search_isbn=[];
+ for(i=0;i<details.length;i++){
+	 var temp = details[i].split("/");
+	 books_img.push(temp[0]);
+	 search_title.push(temp[1]);
+	 search_year.push(temp[3]);
+	 search_cat.push(temp[7]);
+	 temp[6]= temp[6].replace( /\-/g,'' );
+	 search_isbn.push(temp[6]);
+	 }
+$(document).ready(function(){
+	
+	 var url=window.location.search;
+	var suburl = url.split("?")[1].split("&");
+	for(i=0;i<suburl.length;i++){
+	 suburl[i] = suburl[i].replace(/\+/g,' '); 
+		}
+	var type= suburl[0].split("=")[1];
+    var name= suburl[1].split("=")[1];
+	var id = [];
+	if(type=='all'){ for(i=0;i<details.length;i++){ id.push(i) }}
+	switch (type){
+		case 'title':
+		
+		for(i=0;i<search_title.length;i++){ if( search_title[i].toLowerCase()==name.toLowerCase() ){ id.push(i)}}
+		;break;
+		case 'ISBN':
+		for(i=0;i<search_isbn.length;i++){ if( search_isbn[i]==name.replace(/\-/g,'') ){ id.push(i)}}
+		; break;
+		case 'year':
+		for(i=0;i<search_year.length;i++){ if( search_year[i]==name ){ id.push(i)}}
+		 break;
+		 case 'cat':
+		 for(i=0;i<search_cat.length;i++){ if( search_cat[i]==name ){ id.push(i)}}
+		 break;
+		 case '':
+		alert("'Sorry' You have not selected any type please select a type")
+		}
+		if(id.length==0){$("#search_result").append('<p align="center" style=" font-size:50px; color:#666") > "SORRY" </br> NO RESULT FOUND </br> Please try other search type  </p>')}
+	for(i=0;i<id.length;i++){
+		var add = id[i];
+		var data = details[add].split("/")
+		$("#search_result").append('  <div class="book_details" > <img src="images/'+data[0]+'.jpg" class="book_image" /> <p id="book_title" > <a href="Book Details.html?'+data[0]+'" id="booklink" > '+data[1].toUpperCase()+'</a> </p><p class="part_line" style=" margin-top:0px;"  > ~~~~~~~~~~~~~~~~~~~~~~~~~ </p>  <p id="book_author"  > By '+data[2]+' <p> <p id="book_prise"> Price(Rs.): '+data[5]+'.00 </p> <p id="book_year" > year: '+data[3]+' </p>  </div> </br>')
+		}	
+	})
+	
+	
+ </script>
+</head>
+
+<body background="" >
+
+<div id="header_fix" >
+<div id="logo"> 
+  <p class="pph1" >P </p> <p class="pph2">P </p><p class="pph3"> H</p>
+</div>
+
+<div id="book_search" style=" width:1000px; height:20px; margin-left:15%; margin-top:5px;" > 
+ <form action="Search book.html" method="get" id="search"  >
+<select name="search_by" id="search_type" >
+<option value="" > Select Search type </option>
+<option value="title" selected="selected" >TITLE</option> 
+<option value="ISBN"> ISBN</option>
+<option value="year">YEAR</option>
+ </select>
+ <input id="formtext" type="text"  name="search_item"  size="30"  />
+ <button id="formbutton"> GO </button>
+</form> 
+</div>
+</div>
+<div id="header"> 
+<div id="main"> 
+
+<div id="menu" align="center">
+<ul> 
+<li class="item"><a href="index.html">HOME</a> </li>
+<li class="item"> /</li>
+<li class="item"><a href="About Us.html">ABOUT US </a> </li>
+<li class="item">/ </li><li class="item"><a href="#">BOOKS</a>
+<ul> <li class="subitem"><a href="Search book.html?search_by=cat&search_item=def"> DEFENCE </a> </li> 
+<li class="subitem"><a href="Search book.html?search_by=cat&search_item=rel"> RELIGION </a> </li>
+<li class="subitem"><a href="Search book.html?search_by=cat&search_item=budd"> BUDDHISISM </a> </li>
+<li class="subitem"><a href="Search book.html?search_by=all&search_item=all"> ALL BOOKS </a> </li>
+</ul>
+</li>
+<li class="item"> / </li>
+<li class="item"><a href="Search book.html">SEARCH</a></li>
+<li class="item"> / </li>
+<li class="item"><a href="Contect Us.html">CONTACT US</a></li>
+</ul>
+</div>
+</div>
+</br> </br></br></br></br></br>
+</div>
+<div id="side-section" style="width:250px; position:fixed; float:left; margin:0px;;height:500px; padding:0px; margin-top:20px;">  
+<p class="cat"><a  href="Search book.html?search_by=cat&search_item=def"> DEFENCE </a>  </p>
+<p class="cat"> <a  href="Search book.html?search_by=cat&search_item=rel"> RELIGION </a></p>
+ <p class="cat"><a  href="Search book.html?search_by=cat&search_item=budd"> BUDDHISISM </a> </p>
+ <p class="cat"><a  href="Search book.html?search_by=all&search_item=all"> ALL BOOKS </a></p>
+</br> </br>
+ <a target="_new" href="cataloge/pdf.pdf" style="text-decoration:none;"><p class="download"> CATALOGE PDF  </p> </a>
+ <a href="cataloge/Excel.xlsx" style="text-decoration:none;"><p class="download"> CAT. EXCEL </p> </a> 
+</div>
+<div id="search_result"> 
+</div>
+</br>
+
+</body>
+</html>

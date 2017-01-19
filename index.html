@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+    PPH HOME</title>
+    <link rel="shortcut icon" href="logo.jpg" >
+ <link rel="stylesheet" href="scripts/header.css"  />
+ <link rel="stylesheet" href="scripts/content.css"  />
+ <link rel="stylesheet" href="scripts/Banner.css"  />
+ <script type="text/javascript" src="scripts/book details.js"> </script>
+ <script type="text/javascript" src="jquery-1.12.0.js" > </script>
+ <script type="text/javascript" src="scripts/slide.js"></script>
+<script type="text/javascript" src="jquery-ui.min.js" > </script>
+<script type="text/javascript" src="scripts/banner.js"> </script>
+
+</head  >
+<body style="position:inherit;">
+<div id="header_fix" >
+<div id="logo"> 
+  <p class="pph1" >P </p> <p class="pph2">P </p><p class="pph3"> H</p>
+</div>
+
+<p id="cname">PRASHANT PUBLISHING HOUSE</p>
+</div>
+
+<div id="header"> 
+<div id="main"> 
+
+<div id="menu" align="center">
+<ul> 
+<li class="item"><a href="index.html">HOME</a> </li>
+<li class="item"> /</li>
+<li class="item"><a href="About Us.html">ABOUT US </a> </li>
+<li class="item">/ </li><li class="item"><a href="#">BOOKS</a>
+<ul> <li class="subitem"><a href="Search book.html?search_by=cat&search_item=def"> DEFENCE </a> </li> 
+<li class="subitem"><a href="Search book.html?search_by=cat&search_item=rel"> RELIGION </a> </li>
+<li class="subitem"><a href="Search book.html?search_by=cat&search_item=budd"> BUDDHISISM </a> </li>
+<li class="subitem"><a href="Search book.html?search_by=all&search_item=all"> ALL BOOKS </a> </li>
+</ul>
+</li>
+<li class="item"> / </li>
+<li class="item"><a href="Search book.html">SEARCH</a></li>
+<li class="item"> / </li>
+<li class="item"><a href="Contect Us.html">CONTACT US</a></li>
+</ul>
+</div>
+</div>
+</br> </br></br></br></br></br>
+</div>
+<div>
+<div id="slider">
+<div id="banner">
+<script > 
+Banner();
+</script>
+ </div>
+ </div>
+ <div class="search_Form"  >
+ <form action="Search book.html" method="get" id="search"  >
+ <p style=""> <b>SEARCH BOOK </b> </p>
+ 
+<select name="search_by" id="search_type" >
+<option value="" selected="selected"> Select Search type </option>
+<option value="title" >TITLE</option> 
+<option value="ISBN"> ISBN</option>
+<option value="year">YEAR</option>
+ </select>
+ </br></br>
+ <p id="formlable" > PLEASE SELECT SEARCH TYPE  </p>
+ </br></br>
+ <input id="formtext" type="text"  name="search_item"   />
+ </br> </br>
+ <button id="formbutton"> SEARCH </button>
+  </form>
+ </div>
+<div id="content">
+<div id="discription" > 
+<p  style="margin:2%; color:#666; text-indent:100px; font-size:22px; font-family:'Times New Roman', Times, serif; width:95%" >       <b style="font-size:40px">P</b>RASHANT <b style="font-size:40px">P</b>UBLISHING <b style="font-size:40px">H</b>OUSE has been a part of publishing industry since 2008 localized in Delhi Founded by Mr. Ramesh Jha. We mainly publish research books on subjects i.e. Defense, Buddhism & political Issues. We have also published books on other categories like regional, Environmental issues etc. We publish books in both Hindi and English languages. Since our books are well updated with latest affairs written by our well experienced authors, it is the source of attraction for the readers of all over the world. 
+  </p>
+</div>
+<div id="download">
+<p align="center" style="font-family:Arial, Helvetica, sans-serif; color:#CCC; text-shadow: 5px 5px 10px #333; font-size:50px; margin:10px;" > DOWNLOAD CATALOUGE </p>
+ <div class="radio" style="margin-left:23%; margin-right:10%" >
+  <p class="formet" > PDF <input style=" width:25px; height:25px;"  type="radio" name="formet" value="PDF" checked="checked"  /> </p>
+ <p class="formet" > MS.EXCEL <input style=" width:25px; height:25px;"  type="radio" name="formet" value="Excel"  /> </p> 
+ <p class="formet" > MS.DOC <input style=" width:25px; height:25px;"  type="radio" name="formet" value="Doc"  /> </p>
+</div>
+<a id="cat_link" href="cataloge/pdf.pdf" target="_new" >
+<button class="Down_cat" > DOWNLOAD   </button>  
+</a>
+ <p id="cat_formet" align="center" style="font-family:'Times New Roman', Times, serif; color:#06C; font-size:30px; margin:10px;" > In PDF </p>
+
+ </div>
+ </br>
+<div id="content1" style="position:inherit" >
+</br>
+<p align="center" style="font-family:Arial, Helvetica, sans-serif;color:#CCC; text-shadow: 5px 5px 10px #333; font-size:50px; margin:10px;" > LATEST RELEASE </p>
+<div class="direction" align="center";>
+<div class="dir-right"><a  class="right-latest"> => </a> </div><div class="dir-left"> <a   class="left-latest"> <= </a></div>
+</div>
+<div class="book_series">
+<script> 
+
+Latest();
+
+ </script>
+ <a href="Search book.html?search_by=all&search_item=all"> 
+<img class="latest" style="border:none; width:250px" src="more.jpg" alt="click here for more"/>
+ </a>
+ </div>
+ </div>
+ </br> </br> 
+  </div>
+</div>
+<div id="footer">
+<div class="about_us"> 
+<p align="center" style="font-family:Arial, Helvetica, sans-serif;color:#FFF; text-shadow: 5px 5px 10px #333; font-size:25px; margin:10px;" > ABOUT US </p>
+<p  style="margin:2%; color:#333; text-indent:100px; font-size:18px; font-family:'Times New Roman', Times, serif;" >      
+
+ <b style="font-size:30px">P</b>RASHANT <b style="font-size:30px">P</b>UBLISHING <b style="font-size:30px">H</b>OUSE has been a part of publishing industry since 2008 localized in Delhi Founded by Mr. Ramesh Jha. We mainly publish research books on subjects i.e. Defense, Buddhism & political Issues. We have also published books on other categories like regional, Environmental issues etc. We publish books in both Hindi and English languages. Since our books are well updated with latest affairs written by our well experienced authors, it is the source of attraction for the readers of all over the world. 
+
+  </p>
+</br>
+<img src="php-samll.gif" width="100px" height="50px"  />
+ <p> All Rights Reserved © PRASHANT PUBLISHING HOUSE </p>
+<p> Best Viewed in 1024 X 768, Google Crome </p>
+</div>
+<div class="social">
+<div class="contact_us"> </div>
+<p align="center" style="font-family:Arial, Helvetica, sans-serif;color:#FFF; text-shadow: 5px 5px 10px #333; font-size:25px; margin:10px;" > CONTECT US </p>
+
+<pre style="margin:2%; color:#333; font-size:18px; font-family:'Times New Roman', Times, serif;" >
+ <b>Address:</b>
+                 		PRASHANT PUBLISHING HOUSE
+                		C-34, 28 Futa Road, Gali No.:3
+                		West Karawal Nagar, Delhi: 110094
+    
+<b> Contact no. :</b>         +91 8826258746, +91 9810396373
+<b> Email Us At :</b> 	 prashantpublishinghouse@gmail.com
+<b> Website:</b>      	         www.pphbooks.co.in</p>
+</pre>
+<div class="social_link"> 
+<p align="center" style="font-family:Arial, Helvetica, sans-serif;color:#FFF; text-shadow: 5px 5px 10px #333; font-size:25px; margin:10px;" > FOLLOW US </p>
+</br>
+</br> 
+</div>
+ </div>
+</div>
+</body>
+</html>

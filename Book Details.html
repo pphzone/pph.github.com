@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>::BOOKS::</title>
+<link rel="shortcut icon" href="logo.jpg" >
+<link rel="shortcut icon" type="image/png" href="logo.jpg"  />
+<link rel="stylesheet" href="scripts/header.css"  />
+  <script type="text/javascript" src="jquery-1.12.0.js" > </script>
+  <script type="text/javascript" src="jquery-ui.min.js" > </script>
+  <script type="text/javascript" src="scripts/book details.js"> </script>
+<script>
+$(document).scroll(function(){
+
+    $("#header_fix").css({"background-color": "#8fd2ff","background":"-webkit-linear-gradient(#09F,#8fd2ff)"});
+	$(" .pph2 , .pph3").css({"font-size":"50px","margin-left":"-10px","color":"#FFF"})
+     $(".pph1").css({"font-size":"50px","color":"#FFF"})
+	}) 
+var books_img=[];
+	var search_cat=[];
+ var search_title=[];
+ var search_year=[];
+ var search_isbn=[];
+ for(i=0;i<details.length;i++){
+	 var temp = details[i].split("/");
+	 books_img.push(temp[0]);
+	 search_title.push(temp[1]);
+	 search_year.push(temp[3]);
+	 search_cat.push(temp[7]);
+	 temp[6]= temp[6].replace( /\-/g,'' );
+	 search_isbn.push(temp[6]);
+	 };
+ $(document).ready(function(){
+	 var url = window.location.search;
+	 var img_no = url.split("?")[1];
+	 var id = books_img.indexOf(img_no);
+	 var book_data = details[id].split("/");	 
+	 var about_book = about[id].split("/");
+	 $("#details").append('<img class="bookimg" src="images/Image p/'+book_data[0]+'.jpg"/> <div class="details"> <p class="title"> '+book_data[1].toUpperCase()+' </p> <p class="author"> By '+book_data[2]+' </p> <p class="cover" >'+about_book[2]+' </p> <p class="sub" >Year: '+book_data[3]+' </br></br> Pages: '+book_data[4]+'</br></br> Price(Rs): '+book_data[5]+'.00</br></br> ISBN No.: '+book_data[6]+'</P> </div> </br><p class="about" > ABOUT THE BOOK </p> <p class="about_book"> '+about_book[1]+' </p>')
+	 })
+  </script>
+
+</head>
+
+<body>
+<div id="header_fix" >
+<div id="logo"> 
+  <p class="pph1" >P </p> <p class="pph2">P </p><p class="pph3"> H</p>
+</div>
+
+<div id="book_search" style=" width:1000px; height:20px; margin-left:15%; margin-top:5px;" > 
+ <form action="Search book.html" method="get" id="search"  >
+<select name="search_by" id="search_type" >
+<option value=""> Select Search type </option>
+<option value="title" selected="selected" >TITLE</option> 
+<option value="ISBN"> ISBN</option>
+<option value="year">YEAR</option>
+ </select>
+ <input id="formtext" type="text"  name="search_item"  size="30"  />
+ <button id="formbutton"> GO </button>
+</form> 
+</div>
+</div>
+<div id="header"> 
+<div id="main"> 
+
+<div id="menu" align="center">
+<ul> 
+<li class="item"><a href="index.html">HOME</a> </li>
+<li class="item"> /</li>
+<li class="item"><a href="About Us.html">ABOUT US </a> </li>
+<li class="item">/ </li><li class="item"><a href="#">BOOKS</a>
+<ul> <li class="subitem"><a href="Search book.html?search_by=cat&search_item=def"> DEFENCE </a> </li> 
+<li class="subitem"><a href="Search book.html?search_by=cat&search_item=rel"> RELIGION </a> </li>
+<li class="subitem"><a href="Search book.html?search_by=cat&search_item=budd"> BUDDHISISM </a> </li>
+<li class="subitem"><a href="Search book.html?search_by=all&search_item=all"> ALL BOOKS </a> </li>
+</ul>
+</li>
+<li class="item"> / </li>
+<li class="item"><a href="Search book.html">SEARCH</a></li>
+<li class="item"> / </li>
+<li class="item"><a href="Contect Us.html">CONTACT US</a></li>
+</ul>
+</div>
+</div>
+</br> </br></br></br></br></br>
+</div>
+<div id="details" >
+
+ </div>
+
+</body>
+</html>
